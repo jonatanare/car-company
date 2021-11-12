@@ -1,0 +1,52 @@
+.main_menu_bg .navbar-default .navbar-nav > .active > a {
+    color: #ecdf7f;
+    border-bottom: 1px solid #ecdf7f;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ecdf7f;
+    background: transparent;
+}
+.separator{
+    border-bottom: 1px solid #ecdf7f;
+    background: #ecdf7f;
+}
+.home_btn a.btn.btn-lg.m_t_10 {
+    color: #fff;
+    border: 1px solid #186c84;
+    background: #186c84;
+}
+
+.btn {
+    /*color: #ecdf7f;*/
+    border: 1px solid #fff;
+}
+
+.btn-default:hover {
+    background: #ecdf7f;
+    border: 1px solid #ecdf7f;
+}
+
+.btn-atras{
+    background: #ecdf7f;
+    border: 1px solid #ecdf7f;
+}
+
+.car {
+    font-family: 'Rubik';
+    font-weight: bold;
+    color: #ecdf7f;
+}
+.company{
+    font-family: 'Rubik';
+    font-weight: bold;
+    color: #186c84;
+}
+
+.scrooldown a i {
+    color: #186c84;
+}
+
+.btn_main_trial_area{
+    border: 1px solid #186c84;
+    background: #186c84;
+}

@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/estrena', function (){
+    return view('estrena');
+});
+
+Route::get('/quote', 'QuoteController@index');
+
+Route::post('/quote', 'QuoteController@store'); //Calcular quote
+Route::post('/', 'MessagesController@store'); // Enviar formulario de contacto en home
+Route::post('/estrena', 'MessagesController@store'); // Enviar formulario de contacto en estrena
