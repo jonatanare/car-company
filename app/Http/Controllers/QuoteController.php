@@ -14,7 +14,9 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        //
+        $quotes = Quote::all();
+
+        return view('quote')->with(compact('quotes'));
     }
 
     /**
@@ -35,7 +37,40 @@ class QuoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $messages = [
+			'mount.required' => 'Es necesario ingresar un monto mayor a $80,000',
+			'mount.min' => 'El nombre del producto debe tener al menos 6 caracteres',
+			'description.required' => 'La description corta es obligatorio',
+			'description.max' => 'La descripcion corta admite solo 30 caracteres',
+			'price.required' => 'Es obligatorio definir un precio para el producto',
+			'price.numeric' => 'Ingrese u  numero valido',
+			'price.min' => 'No se admiten valores negativos',
+		];
+		$rules = [
+			'name' => 'required|min:6',
+			'description' => 'required|max:100',
+			'price' => 'required|numeric|min:0',
+		];
+
+		$quotes = new Quote();
+		$quotes->mount = $request->input('mount'); // monto de credito o costo de vehiculo
+		$quotes->termins = $request->input('termins'); // meses
+		$quotes->interests = $request->input('interests'); //tasa
+		$quotes->initial_payment = $request->input('initial_payment');
+
+        $t = ($request->input('interests') / 12) / 100;
+
+        $n = $request->input('termins');
+
+        $m = $request->input('mount') - $request->input('initial_payment') ;
+
+        $pago_mensual = ($t * $m) / (1 - (pow(1 + $t, -$n)));
+
+        $quotes->quote = $pago_mensual;
+
+		$quotes->save(); //ejecutar una consulta INSERT a la tabla productos
+
+		return redirect('/quote');
     }
 
     /**

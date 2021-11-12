@@ -26,6 +26,11 @@
     border: 1px solid #ecdf7f;
 }
 
+.btn-atras{
+    background: #ecdf7f;
+    border: 1px solid #ecdf7f;
+}
+
 .car {
     font-family: 'Rubik';
     font-weight: bold;

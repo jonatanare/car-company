@@ -15,6 +15,11 @@ class CreateQuotesTable extends Migration
     {
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
+            $table->double('mount');
+            $table->double('termins');
+            $table->double('interests');
+            $table->double('initial_payment');
+            $table->double('quote')->nullable();
             $table->timestamps();
         });
     }

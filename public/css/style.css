@@ -670,6 +670,10 @@ input::-ms-input-placeholder {
     background: url(../images/hero-car-company.jpg) no-repeat center center;
     background-size: cover;
 }
+.home_estrena{
+    background: url(../images/hero-estrena.jpg) no-repeat center center;
+    background-size: cover;
+}
 .home_skew_border{
     position: relative;
 }
